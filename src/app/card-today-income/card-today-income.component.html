@@ -1,0 +1,29 @@
+<div class="card text-left" *ngIf="day_income">
+  <div class="card-body">
+    <div class="fa fa-money card-icon"></div>
+    <h6 class="text-uppercase text-muted">Today Income</h6>
+    <canvas baseChart width="300" height="70"
+      class="card-chart"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [colors]="lineChartColors"
+      [legend]="lineChartLegend"
+      [chartType]="lineChartType"
+      (chartHover)="chartHovered($event)"
+      (chartClick)="chartClicked($event)"></canvas>
+    <div class="row verbose-stats">
+      <div class="col">
+        <small>Today</small>
+        <h5>{{ day_income.today_total | currency:'USD':true:'1.2-2' }}</h5>
+      </div>
+      <div class="col">
+        <small>Last week</small>
+        <h5>{{ day_income.week_total | currency:'USD':true:'1.2-2' }}</h5>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted text-left">
+    This is standard panel footer
+  </div>
+</div>

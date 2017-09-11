@@ -1,0 +1,30 @@
+<div class="card text-center" *ngIf="activity">
+  <div class="card-body text-left">
+    <div class="fa fa-chain card-icon"></div>
+    <h6 class="text-uppercase text-muted">Special title treatment</h6>
+    <h2 class="text-muted">{{ activity.total_visitors }}</h2>
+    <div>
+      <span>Social users</span>
+      <div class="progress">
+        <div class="progress-bar bg-success"
+          role="progressbar"
+          [ngStyle]="{ 'width': activity.social_visitors / activity.total_visitors * 100 + '%' }"
+          aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+    <div class="row verbose-stats">
+      <div class="col">
+        <small>Pages / Visit</small>
+        <h5>{{ activity.average_per_page }}</h5>
+      </div>
+      <div class="col">
+        <small>% New Visits</small>
+        <h5>{{ activity.new_visitors / activity.total_visitors * 100 | number:'1.0-0' }}%</h5>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted text-left">
+    This is standard panel footer
+  </div>
+</div>

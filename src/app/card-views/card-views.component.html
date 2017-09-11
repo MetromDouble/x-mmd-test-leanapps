@@ -1,0 +1,16 @@
+<div class="card text-center" *ngIf="views">
+  <div class="card-body text-left">
+    <div class="fa fa-desktop card-icon"></div>
+    <h6 class="text-uppercase text-muted">Page views</h6>
+    <h3 class="text-success">{{ views / 1000 | number:'1.0-0' }}k+</h3>
+    <span>Social users</span>
+    <p>
+      <small class="text-muted">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint magnam error animi magni facere.
+      </small>
+    </p>
+  </div>
+  <div class="card-footer text-muted text-left">
+    This is standard panel footer
+  </div>
+</div>
